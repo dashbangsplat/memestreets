@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://images/scenery/abandoned_city/Background city Seamless.png" type="Texture" id=1]
+[ext_resource path="res://images/scenery/abandoned_city/game_palette_320x240/bakcground_city_seamless_2467x1696.png" type="Texture" id=1]
 [ext_resource path="res://actors/minion.tscn" type="PackedScene" id=2]
 [ext_resource path="res://actors/boss.tscn" type="PackedScene" id=3]
 

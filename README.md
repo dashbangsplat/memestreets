@@ -12,7 +12,7 @@ Meme streets is a 8-bit retro style side scrolling beat-em-up where Memes, old a
 
 ## Retro Style
 
-We chose the NTSC Atari 2600 color palette for this project. Our assets were converted or created in this palette. We found this cool website where they had the .gpl format of the palette that we downloaded and used in Gimp. We also converted the palette into txt format (with the alpha channel added) for Paint.net usage.
+We chose to base our 256 color palette off of Sega Mega Drives' color palette (the midtones). We are running our resolution at 320x240 (so 4:3 aspect ratio). Originally we were going to use a color palette from the Atari 2600 but we wanted a few more colors to work with in our assets and in the assets we converted. Palette files (in various formats) can be found in the misc directory.
 
 ## Helpful Resources
 
