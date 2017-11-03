@@ -1,0 +1,132 @@
+GIMP Palette
+Name: Atari 2600 NTSC
+Columns: 16
+# 
+  0   0   0	Swatch 1
+ 64  64  64	Swatch 2
+108 108 108	Swatch 3
+144 144 144	Swatch 4
+176 176 176	Swatch 5
+200 200 200	Swatch 6
+220 220 220	Swatch 7
+236 236 236	Swatch 8
+ 68  68   0	Swatch 9
+100 100  16	Swatch 10
+132 132  36	Swatch 11
+160 160  52	Swatch 12
+184 184  64	Swatch 13
+208 208  80	Swatch 14
+232 232  92	Swatch 15
+252 252 104	Swatch 16
+112  40   0	Swatch 17
+132  68  20	Swatch 18
+152  92  40	Swatch 19
+172 120  60	Swatch 20
+188 140  76	Swatch 21
+204 160  92	Swatch 22
+220 180 104	Swatch 23
+232 204 124	Swatch 24
+132  24   0	Swatch 25
+152  52  24	Swatch 26
+172  80  48	Swatch 27
+192 104  72	Swatch 28
+208 128  92	Swatch 29
+224 148 112	Swatch 30
+236 168 128	Swatch 31
+252 188 148	Swatch 32
+136   0   0	Swatch 33
+156  32  32	Swatch 34
+176  60  60	Swatch 35
+192  88  88	Swatch 36
+208 112 112	Swatch 37
+224 136 136	Swatch 38
+236 160 160	Swatch 39
+252 180 180	Swatch 40
+120   0  92	Swatch 41
+140  32 116	Swatch 42
+160  60 136	Swatch 43
+176  88 156	Swatch 44
+192 112 176	Swatch 45
+208 132 192	Swatch 46
+220 156 208	Swatch 47
+236 176 224	Swatch 48
+ 72   0 120	Swatch 49
+ 96  32 144	Swatch 50
+120  60 164	Swatch 51
+140  88 184	Swatch 52
+160 112 204	Swatch 53
+180 132 220	Swatch 54
+196 156 236	Swatch 55
+212 176 252	Swatch 56
+ 20   0 132	Swatch 57
+ 48  32 152	Swatch 58
+ 76  60 172	Swatch 59
+104  88 192	Swatch 60
+124 112 208	Swatch 61
+148 136 224	Swatch 62
+168 160 236	Swatch 63
+188 180 252	Swatch 64
+  0   0 136	Swatch 65
+ 28  32 156	Swatch 66
+ 56  64 176	Swatch 67
+ 80  92 192	Swatch 68
+104 116 208	Swatch 69
+124 140 224	Swatch 70
+144 164 236	Swatch 71
+164 184 252	Swatch 72
+  0  24 124	Swatch 73
+ 28  56 144	Swatch 74
+ 56  84 168	Swatch 75
+ 80 112 188	Swatch 76
+104 136 204	Swatch 77
+124 156 220	Swatch 78
+144 180 236	Swatch 79
+164 200 252	Swatch 80
+  0  44  92	Swatch 81
+ 28  76 120	Swatch 82
+ 56 104 144	Swatch 83
+ 80 132 172	Swatch 84
+104 156 192	Swatch 85
+124 180 212	Swatch 86
+144 204 232	Swatch 87
+164 224 252	Swatch 88
+  0  64  44	Swatch 89
+ 28  92  72	Swatch 90
+ 56 124 100	Swatch 91
+ 80 156 128	Swatch 92
+104 180 148	Swatch 93
+124 208 172	Swatch 94
+144 228 192	Swatch 95
+164 252 212	Swatch 96
+  0  60   0	Swatch 97
+ 32  92  32	Swatch 98
+ 64 124  64	Swatch 99
+ 92 156  92	Swatch 100
+116 180 116	Swatch 101
+140 208 140	Swatch 102
+164 228 164	Swatch 103
+184 252 184	Swatch 104
+ 20  56   0	Swatch 105
+ 52  92  28	Swatch 106
+ 80 124  56	Swatch 107
+108 152  80	Swatch 108
+132 180 104	Swatch 109
+156 204 124	Swatch 110
+180 228 144	Swatch 111
+200 252 164	Swatch 112
+ 44  48   0	Swatch 113
+ 76  80  28	Swatch 114
+104 112  52	Swatch 115
+132 140  76	Swatch 116
+156 168 100	Swatch 117
+180 192 120	Swatch 118
+204 212 136	Swatch 119
+224 236 156	Swatch 120
+ 68  40   0	Swatch 121
+100  72  24	Swatch 122
+132 104  48	Swatch 123
+160 132  68	Swatch 124
+184 156  88	Swatch 125
+208 180 108	Swatch 126
+232 204 124	Swatch 127
+252 224 140	Swatch 128
