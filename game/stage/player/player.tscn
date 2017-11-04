@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://actors/player.gd" type="Script" id=1]
-[ext_resource path="res://images/actors/doge_standing.png" type="Texture" id=2]
+[ext_resource path="res://stage/player/player.gd" type="Script" id=1]
+[ext_resource path="res://assets/player/doge_standing.png" type="Texture" id=2]
 
 [node name="Player" type="Node2D"]
 

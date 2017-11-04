@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://ui/hud.tscn" type="PackedScene" id=1]
-[ext_resource path="res://levels/level_1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://actors/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://stage/hud/hud.tscn" type="PackedScene" id=1]
+[ext_resource path="res://stage/level_1/level_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://stage/player/player.tscn" type="PackedScene" id=3]
 
 [node name="Stage" type="Node2D"]
 
