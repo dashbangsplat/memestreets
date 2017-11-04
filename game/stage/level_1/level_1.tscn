@@ -11,6 +11,24 @@
 texture = ExtResource( 1 )
 centered = false
 
+[node name="Background city Seamless1" type="Sprite" parent="."]
+
+transform/pos = Vector2( 320, 0 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Background city Seamless2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 640, 0 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Background city Seamless3" type="Sprite" parent="."]
+
+transform/pos = Vector2( 960, 0 )
+texture = ExtResource( 1 )
+centered = false
+
 [node name="Minion" parent="." instance=ExtResource( 2 )]
 
 [node name="Boss" parent="." instance=ExtResource( 3 )]
