@@ -11,11 +11,4 @@ script/script = ExtResource( 1 )
 
 texture = ExtResource( 2 )
 
-[node name="Body" type="KinematicBody2D" parent="."]
-
-input/pickable = false
-collision/layers = 1
-collision/mask = 1
-collision/margin = 0.08
-
 
