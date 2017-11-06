@@ -9,7 +9,9 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[node name="Minion" type="KinematicBody2D"]
+[node name="Minion" type="KinematicBody2D" groups=[
+"enemies",
+]]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -23,14 +25,6 @@ script/script = ExtResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
-
-[node name="FindPlayer" type="RayCast2D" parent="."]
-
-transform/pos = Vector2( -5, -20 )
-enabled = true
-cast_to = Vector2( -320, 0 )
-layer_mask = 1
-type_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
