@@ -34,6 +34,10 @@ centered = false
 
 [node name="Minion" parent="." instance=ExtResource( 3 )]
 
+transform/pos = Vector2( 683, 164 )
+
 [node name="Boss" parent="." instance=ExtResource( 4 )]
+
+visibility/visible = false
 
 

@@ -1,14 +1,34 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://stage/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/doge_standing.png" type="Texture" id=2]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
 
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Player" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 2.77156, 0, 0, 3.234, 0.208099, -1.35123 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 2
+collision/margin = 0.08
 script/script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 0.208099, -1.35123 )
+transform/scale = Vector2( 2.77156, 3.234 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 
