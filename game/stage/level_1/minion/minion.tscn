@@ -10,7 +10,8 @@ radius = 10.0
 height = 20.0
 
 [node name="Minion" type="KinematicBody2D" groups=[
-"enemies",
+"enemy",
+"minion",
 ]]
 
 input/pickable = false
@@ -33,5 +34,12 @@ transform/scale = Vector2( 1.76664, 1.31583 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
+
+[node name="RayCastAttack" type="RayCast2D" parent="."]
+
+enabled = false
+cast_to = Vector2( -35, 0 )
+layer_mask = 1
+type_mask = 15
 
 

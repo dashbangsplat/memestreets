@@ -11,15 +11,25 @@ var WIDTH
 var HEIGHT
 var TEXTURE_POSITION_OFFSET
 const MOVE_CAMERA_BOUNDARY = 64
+var RAYCAST_ATTACK
+const ATTACK_DAMAGE = 50
+const ATTACK_DELAY = 1
+var ATTACK_TIMER = ATTACK_DELAY
+const MAX_HEALTH = 100
+var HEALTH
+var SCORE = 0
 
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	VIEWPORT = self.get_node("/root")
 	STAGE = self.get_node("/root/Stage")
+	RAYCAST_ATTACK = self.get_node("RayCastAttack")
 	CAMERA = self.get_node("/root/Stage/Camera")
 	CAMERA_START = CAMERA.get_pos()
 	CAMERA.make_current()
+	
+	STAGE.connect(STAGE.SIGNAL_ENEMY_DIED, self, "handle_enemy_died")
 	
 	var texture = self.get_node("Sprite").get_texture()
 	WIDTH = texture.get_width()
@@ -29,6 +39,8 @@ func _ready():
 	TEXTURE_POSITION_OFFSET.size.height = (HEIGHT / 2); # bottom size - half the size of the texture (since it's centered) minus some value so it doesnt climb up the wall
 	TEXTURE_POSITION_OFFSET.pos.x = - (WIDTH / 2) # left side -  half the size of the texture (since it's centered)
 	TEXTURE_POSITION_OFFSET.size.width = (WIDTH / 2) # right side
+	
+	HEALTH = MAX_HEALTH
 	
 	self.set_process(true)
 	
@@ -54,6 +66,20 @@ func _process(delta):
 		pos.y += 1
 	
 	self.set_pos(pos)
+	
+	ATTACK_TIMER += delta
+	
+	if(Input.is_action_pressed("main_attack") && ATTACK_TIMER >= ATTACK_DELAY):
+		RAYCAST_ATTACK.set_enabled(true)
+		RAYCAST_ATTACK.force_raycast_update()
+		if(RAYCAST_ATTACK.is_colliding()):
+			var obj = RAYCAST_ATTACK.get_collider()
+			if(obj.is_in_group('enemy')):
+				print('hit!')
+				ATTACK_TIMER = 0
+				obj.take_damage(ATTACK_DAMAGE)
+		RAYCAST_ATTACK.set_enabled(false)
+	
 
 func can_level_scroll_to_the_right():
 	return self.get_pos().x > VIEWPORT.get_rect().size.width + CAMERA.get_pos().x - CAMERA_START.x - MOVE_CAMERA_BOUNDARY && CAMERA.get_pos().x + VIEWPORT.get_rect().size.width < STAGE.meta('level_width')
@@ -73,3 +99,17 @@ func can_player_move_down():
 
 func get_movement_boundary():
 	return Rect2(0 + CAMERA.get_pos().x - CAMERA_START.x, STAGE.meta('floor_boundary'), VIEWPORT.get_rect().size.width + CAMERA.get_pos().x - CAMERA_START.x, VIEWPORT.get_rect().size.height)
+	
+func take_damage(amount):
+	HEALTH -= amount
+	if(HEALTH <= 0):
+		STAGE.emit_signal_player_died()
+		self.set_process(false)
+		self.hide()
+		self.queue_free()
+		self.get_tree().quit()
+
+func handle_enemy_died(points = 0):
+	SCORE += points
+	print(SCORE)
+	

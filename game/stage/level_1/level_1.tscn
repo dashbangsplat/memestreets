@@ -34,7 +34,23 @@ centered = false
 
 [node name="Minion" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 683, 164 )
+transform/pos = Vector2( 294, 174 )
+
+[node name="Minion1" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 529, 153 )
+
+[node name="Minion2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 400, 208 )
+
+[node name="Minion3" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 402, 144 )
+
+[node name="Minion4" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 465, 181 )
 
 [node name="Boss" parent="." instance=ExtResource( 4 )]
 
