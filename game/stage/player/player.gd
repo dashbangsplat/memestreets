@@ -12,12 +12,12 @@ var HEIGHT
 var TEXTURE_POSITION_OFFSET
 const MOVE_CAMERA_BOUNDARY = 64
 var RAYCAST_ATTACK
-const ATTACK_DAMAGE = 50
-const ATTACK_DELAY = 1
+export var ATTACK_DAMAGE = 50
+export var ATTACK_DELAY = 1
 var ATTACK_TIMER = ATTACK_DELAY
-const MAX_HEALTH = 100
-var HEALTH
-var SCORE = 0
+export var MAX_HEALTH = 100
+export var HEALTH = 100
+export var SCORE = 0
 
 func _ready():
 	# Called every time the node is added to the scene.

@@ -20,6 +20,11 @@ collision/layers = 1
 collision/mask = 2
 collision/margin = 0.08
 script/script = ExtResource( 1 )
+ATTACK_DAMAGE = 50
+ATTACK_DELAY = 1
+MAX_HEALTH = 100
+HEALTH = 100
+SCORE = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 

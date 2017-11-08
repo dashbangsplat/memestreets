@@ -1,5 +1,18 @@
 [gd_scene format=1]
 
-[node name="Player Score" type="Node2D"]
+[node name="Player Score" type="Label"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 16.0
+margin/bottom = 14.0
+text = "00000000"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 

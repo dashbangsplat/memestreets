@@ -5,13 +5,13 @@ extends Node2D
 # var b = "textvar"
 var STAGE
 var PLAYER
-const MAX_HEALTH = 100
-var HEALTH
+export var MAX_HEALTH = 100
+export var HEALTH = 100
 var RAYCAST_ATTACK
-const ATTACK_DAMAGE = 5
-const ATTACK_DELAY = 1
+export var ATTACK_DAMAGE = 5
+export var ATTACK_DELAY = 1
 var ATTACK_TIMER = ATTACK_DELAY
-var KILL_SCORE = 50
+export var KILL_SCORE = 50
 
 func _ready():
 	# Called every time the node is added to the scene.

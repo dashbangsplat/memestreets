@@ -1,19 +1,17 @@
 [gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://stage/stage.gd" type="Script" id=1]
-[ext_resource path="res://stage/hud/hud.tscn" type="PackedScene" id=2]
-[ext_resource path="res://stage/level_1/level_1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://stage/player/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://stage/level_1/level_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://stage/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://stage/hud/hud.tscn" type="PackedScene" id=4]
 
 [node name="Stage" type="Node2D"]
 
 script/script = ExtResource( 1 )
 
-[node name="HUD" parent="." instance=ExtResource( 2 )]
+[node name="Level 1" parent="." instance=ExtResource( 2 )]
 
-[node name="Level 1" parent="." instance=ExtResource( 3 )]
-
-[node name="Player" parent="." instance=ExtResource( 4 )]
+[node name="Player" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 160.475, 119.164 )
 
@@ -35,5 +33,7 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
+
+[node name="HUD" parent="Camera" instance=ExtResource( 4 )]
 
 

@@ -3,7 +3,16 @@
 [ext_resource path="res://stage/hud/player_status/player_status.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stage/hud/timer/timer.tscn" type="PackedScene" id=2]
 
-[node name="HUD" type="Node2D"]
+[node name="HUD" type="Container"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
 
 [node name="Player Status" parent="." instance=ExtResource( 1 )]
 
