@@ -18,4 +18,8 @@ margin/bottom = 0.0
 
 [node name="Timer" parent="." instance=ExtResource( 2 )]
 
+margin/left = 300.0
+margin/right = 316.0
+margin/bottom = 14.0
+
 

@@ -1,5 +1,21 @@
-[gd_scene format=1]
+[gd_scene load_steps=2 format=1]
 
-[node name="Timer" type="Node2D"]
+[ext_resource path="res://stage/hud/timer/timer.gd" type="Script" id=1]
+
+[node name="Timer" type="Label"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+text = "00"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 1 )
 
 

@@ -1,4 +1,6 @@
-[gd_scene format=1]
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://stage/hud/player_status/player_health/player_health.gd" type="Script" id=1]
 
 [node name="Player Health" type="ProgressBar"]
 
@@ -14,9 +16,10 @@ range/min = 0.0
 range/max = 100.0
 range/step = 1.0
 range/page = 0.0
-range/value = 1.0
+range/value = 100.0
 range/exp_edit = false
 range/rounded = false
 percent/visible = false
+script/script = ExtResource( 1 )
 
 

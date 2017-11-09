@@ -37,7 +37,6 @@ func _process(delta):
 		if(RAYCAST_ATTACK.is_colliding()):
 			var obj = RAYCAST_ATTACK.get_collider()
 			if(obj.is_in_group('player')):
-				print('hit player!')
 				ATTACK_TIMER = 0
 				obj.take_damage(ATTACK_DAMAGE)
 		RAYCAST_ATTACK.set_enabled(false)

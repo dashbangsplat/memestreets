@@ -75,7 +75,6 @@ func _process(delta):
 		if(RAYCAST_ATTACK.is_colliding()):
 			var obj = RAYCAST_ATTACK.get_collider()
 			if(obj.is_in_group('enemy')):
-				print('hit!')
 				ATTACK_TIMER = 0
 				obj.take_damage(ATTACK_DAMAGE)
 		RAYCAST_ATTACK.set_enabled(false)
@@ -102,6 +101,7 @@ func get_movement_boundary():
 	
 func take_damage(amount):
 	HEALTH -= amount
+	STAGE.emit_signal_player_health(HEALTH)
 	if(HEALTH <= 0):
 		STAGE.emit_signal_player_died()
 		self.set_process(false)
@@ -111,5 +111,5 @@ func take_damage(amount):
 
 func handle_enemy_died(points = 0):
 	SCORE += points
-	print(SCORE)
+	STAGE.emit_signal_player_score(SCORE)
 	
