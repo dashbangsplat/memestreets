@@ -5,14 +5,14 @@ extends KinematicBody2D
 # var b = "textvar"
 var STAGE
 var PLAYER
-export var MAX_HEALTH = 100
+export var MAX_HEALTH = 200
 export var HEALTH = 100
 var RAYCAST_ATTACK
-export var ATTACK_DAMAGE = 5
+export var ATTACK_DAMAGE = 10
 export var ATTACK_DELAY = 1
 var ATTACK_TIMER = ATTACK_DELAY
-export var KILL_SCORE = 50
-export var FIND_PLAYER_RADIUS = 100
+export var KILL_SCORE = 100
+export var FIND_PLAYER_RADIUS = 400
 
 func _ready():
 	# Called every time the node is added to the scene.

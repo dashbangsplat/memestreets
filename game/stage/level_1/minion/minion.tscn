@@ -10,8 +10,8 @@ radius = 10.0
 height = 20.0
 
 [node name="Minion" type="KinematicBody2D" groups=[
-"enemy",
 "minion",
+"enemy",
 ]]
 
 input/pickable = false
@@ -22,6 +22,12 @@ collision/layers = 2
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
+MAX_HEALTH = 100
+HEALTH = 100
+ATTACK_DAMAGE = 5
+ATTACK_DELAY = 1
+KILL_SCORE = 50
+FIND_PLAYER_RADIUS = 100
 
 [node name="Sprite" type="Sprite" parent="."]
 

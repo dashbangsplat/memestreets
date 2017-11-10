@@ -38,22 +38,26 @@ transform/pos = Vector2( 294, 174 )
 
 [node name="Minion1" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 529, 153 )
+transform/pos = Vector2( 789, 118 )
 
 [node name="Minion2" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 400, 208 )
+transform/pos = Vector2( 536, 202 )
 
 [node name="Minion3" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 402, 144 )
+transform/pos = Vector2( 531, 140 )
 
 [node name="Minion4" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 465, 181 )
+transform/pos = Vector2( 793, 211 )
+
+[node name="Minion5" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 845, 162 )
 
 [node name="Boss" parent="." instance=ExtResource( 4 )]
 
-visibility/visible = false
+transform/pos = Vector2( 1238, 145 )
 
 

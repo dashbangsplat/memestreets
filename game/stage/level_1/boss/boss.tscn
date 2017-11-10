@@ -1,5 +1,53 @@
-[gd_scene format=1]
+[gd_scene load_steps=4 format=1]
 
-[node name="Boss" type="Node2D"]
+[ext_resource path="res://stage/level_1/boss/boss.gd" type="Script" id=1]
+[ext_resource path="res://assets/boss/all_the_things_with.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 20.0
+
+[node name="Boss" type="KinematicBody2D" groups=[
+"enemy",
+"boss",
+]]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 0.766044, -0.642788, 1.28558, 1.53209, -20, 8 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+MAX_HEALTH = 200
+HEALTH = 100
+ATTACK_DAMAGE = 10
+ATTACK_DELAY = 1
+KILL_SCORE = 100
+FIND_PLAYER_RADIUS = 400
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -20, 8 )
+transform/rot = 40.0
+transform/scale = Vector2( 1, 2 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="RayCastAttack" type="RayCast2D" parent="."]
+
+transform/pos = Vector2( -25, 10 )
+enabled = false
+cast_to = Vector2( -50, 0 )
+layer_mask = 1
+type_mask = 15
 
 
