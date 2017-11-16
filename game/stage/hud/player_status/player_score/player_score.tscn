@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://stage/hud/player_status/player_score/player_score.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/1943_12px.fnt" type="BitmapFont" id=1]
+[ext_resource path="res://stage/hud/player_status/player_score/player_score.gd" type="Script" id=2]
 
 [node name="Player Score" type="Label"]
 
@@ -10,12 +11,13 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 64.0
+margin/right = 91.0
 margin/bottom = 14.0
-text = "00000000"
+custom_fonts/font = ExtResource( 1 )
+text = "0000000"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = ExtResource( 1 )
+script/script = ExtResource( 2 )
 
 

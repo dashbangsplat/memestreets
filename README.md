@@ -18,3 +18,5 @@ We chose to base our 256 color palette off of Sega Mega Drives' color palette (t
 
 * Starter Abandoned City Background Assets - https://opengameart.org/content/abandon-city-seamless-background
 * Game Color Palettes - http://colorpalettes.ravetracer.de/
+* G7_1943 TTF Font by Genshichi Yasui - http://www.fontspace.com/genshichi-yasui/g7-1943
+* Games TTF Font by Vladimir Nikolic - http://www.fontspace.com/vladimir-nikolic/games

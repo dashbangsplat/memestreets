@@ -48,4 +48,4 @@ func emit_signal_level_timer_expired():
 	self.emit_signal(SIGNAL_LEVEL_TIMER_EXPIRED)
 
 func handle_level_timer_expired():
-	self.get_tree().quit()
+	self.get_tree().change_scene("res://menu/menu.tscn");

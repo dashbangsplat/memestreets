@@ -1,4 +1,6 @@
-[gd_scene format=1]
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://assets/fonts/1943_12px.fnt" type="BitmapFont" id=1]
 
 [node name="Player Name" type="Label"]
 
@@ -8,9 +10,11 @@ size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 0.0
-margin/bottom = 0.0
+margin/right = 52.0
+margin/bottom = 11.0
+custom_fonts/font = ExtResource( 1 )
 text = "Doge"
+uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

@@ -1,0 +1,128 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://assets/fonts/1943.fnt" type="BitmapFont" id=1]
+[ext_resource path="res://menu/menu_play.gd" type="Script" id=2]
+[ext_resource path="res://menu/menu_quit.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "HighlightPlay"
+length = 0.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayerPlay/Play:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "HighlightQuit"
+length = 0.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayerQuit/Quit:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[node name="Control" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="AnimationPlayerPlay" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/HighlightPlay = SubResource( 1 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="Play" type="Label" parent="AnimationPlayerPlay"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 120.0
+margin/top = 100.0
+margin/right = 200.0
+margin/bottom = 116.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "play"
+align = 1
+valign = 1
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 2 )
+
+[node name="AnimationPlayerQuit" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/HighlightQuit = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="Quit" type="Label" parent="AnimationPlayerQuit"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 120.0
+margin/top = 130.0
+margin/right = 200.0
+margin/bottom = 146.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "quit"
+align = 1
+valign = 1
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 3 )
+
+[connection signal="input_event" from="AnimationPlayerPlay/Play" to="AnimationPlayerPlay/Play" method="_on_Play_input_event"]
+
+[connection signal="mouse_enter" from="AnimationPlayerPlay/Play" to="AnimationPlayerPlay/Play" method="_on_Play_mouse_enter"]
+
+[connection signal="mouse_exit" from="AnimationPlayerPlay/Play" to="AnimationPlayerPlay/Play" method="_on_Play_mouse_exit"]
+
+[connection signal="input_event" from="AnimationPlayerQuit/Quit" to="AnimationPlayerQuit/Quit" method="_on_Quit_input_event"]
+
+[connection signal="mouse_enter" from="AnimationPlayerQuit/Quit" to="AnimationPlayerQuit/Quit" method="_on_Quit_mouse_enter"]
+
+[connection signal="mouse_exit" from="AnimationPlayerQuit/Quit" to="AnimationPlayerQuit/Quit" method="_on_Quit_mouse_exit"]
+
+

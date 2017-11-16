@@ -5,7 +5,7 @@ extends Label
 # var b = "textvar"
 var STAGE
 var PLAYER
-const STARTING_SCORE = "00000000"
+const STARTING_SCORE = "0000000"
 
 func _ready():
 	# Called every time the node is added to the scene.
