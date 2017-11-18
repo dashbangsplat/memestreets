@@ -107,7 +107,7 @@ func take_damage(amount):
 		self.set_process(false)
 		self.hide()
 		self.queue_free()
-		self.get_tree().quit()
+		self.get_tree().change_scene("res://menu/menu.tscn")
 
 func handle_enemy_died(points = 0):
 	SCORE += points
