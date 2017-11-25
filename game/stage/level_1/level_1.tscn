@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://stage/level_1/level_1.gd" type="Script" id=1]
 [ext_resource path="res://assets/scenery/abandoned_city/background_city_seamless_320x240.png" type="Texture" id=2]
 [ext_resource path="res://stage/level_1/minion/minion.tscn" type="PackedScene" id=3]
 [ext_resource path="res://stage/level_1/boss/boss.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/audio/music/Level 1.ogg" type="AudioStream" id=5]
 
 [node name="Level 1" type="Node2D"]
 
@@ -59,5 +60,16 @@ transform/pos = Vector2( 845, 162 )
 [node name="Boss" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1238, 145 )
+
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 5 )
+stream/play = true
+stream/loop = true
+stream/volume_db = -1.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 

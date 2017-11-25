@@ -20,3 +20,6 @@ We chose to base our 256 color palette off of Sega Mega Drives' color palette (t
 * Game Color Palettes - http://colorpalettes.ravetracer.de/
 * G7_1943 TTF Font by Genshichi Yasui - http://www.fontspace.com/genshichi-yasui/g7-1943
 * Games TTF Font by Vladimir Nikolic - http://www.fontspace.com/vladimir-nikolic/games
+* 512 Sound Effects - https://opengameart.org/content/512-sound-effects-8-bit-style
+* 5 action chiptunes - https://opengameart.org/content/5-chiptunes-action
+* Arcade boss chiptune - https://opengameart.org/content/arcade-boss-tracks-8-bitchiptune

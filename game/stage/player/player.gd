@@ -5,6 +5,7 @@ extends Node2D
 # var b = "textvar"
 var VIEWPORT
 var STAGE
+var EFFECTS
 var CAMERA
 var CAMERA_START
 var WIDTH
@@ -25,6 +26,7 @@ func _ready():
 	VIEWPORT = self.get_node("/root")
 	STAGE = self.get_node("/root/Stage")
 	RAYCAST_ATTACK = self.get_node("RayCastAttack")
+	EFFECTS = self.get_node("SamplePlayer")
 	CAMERA = self.get_node("/root/Stage/Camera")
 	CAMERA_START = CAMERA.get_pos()
 	CAMERA.make_current()
@@ -75,6 +77,7 @@ func _process(delta):
 		if(RAYCAST_ATTACK.is_colliding()):
 			var obj = RAYCAST_ATTACK.get_collider()
 			if(obj.is_in_group('enemy')):
+				EFFECTS.play("sfx_damage_hit6")
 				ATTACK_TIMER = 0
 				obj.take_damage(ATTACK_DAMAGE)
 		RAYCAST_ATTACK.set_enabled(false)

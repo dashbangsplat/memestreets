@@ -5,6 +5,7 @@ extends KinematicBody2D
 # var b = "textvar"
 var STAGE
 var PLAYER
+var EFFECTS
 export var MAX_HEALTH = 100
 export var HEALTH = 100
 var RAYCAST_ATTACK
@@ -20,6 +21,7 @@ func _ready():
 	STAGE = self.get_node("/root/Stage")
 	RAYCAST_ATTACK = self.get_node("RayCastAttack")
 	PLAYER = self.get_node("/root/Stage/Player")
+	EFFECTS = self.get_node("SamplePlayer")
 	
 	STAGE.connect(STAGE.SIGNAL_PLAYER_DIED, self, "handle_player_died")
 	
@@ -38,6 +40,7 @@ func _process(delta):
 		if(RAYCAST_ATTACK.is_colliding()):
 			var obj = RAYCAST_ATTACK.get_collider()
 			if(obj.is_in_group('player')):
+				EFFECTS.play("sfx_damage_hit6")
 				ATTACK_TIMER = 0
 				obj.take_damage(ATTACK_DAMAGE)
 		RAYCAST_ATTACK.set_enabled(false)
