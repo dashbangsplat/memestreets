@@ -30,7 +30,7 @@ func _ready():
 
 func _process(delta):
 	if(self.get_global_pos().distance_to(PLAYER.get_global_pos()) <= FIND_PLAYER_RADIUS):
-		self.move(-(self.get_global_pos() - PLAYER.get_global_pos()).normalized())
+		self.move((-(self.get_global_pos() - PLAYER.get_global_pos()).normalized()))
 		
 	ATTACK_TIMER += delta
 	

@@ -33,33 +33,47 @@ transform/pos = Vector2( 960, 0 )
 texture = ExtResource( 2 )
 centered = false
 
+[node name="Background 5" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1280, 0 )
+texture = ExtResource( 2 )
+centered = false
+
 [node name="Minion" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 294, 174 )
+transform/pos = Vector2( 298.432, 160.704 )
 
 [node name="Minion1" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 789, 118 )
+transform/pos = Vector2( 837.753, 144.593 )
 
 [node name="Minion2" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 536, 202 )
+transform/pos = Vector2( 467.302, 211.972 )
+
+[node name="Minion6" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1270.63, 195.352 )
 
 [node name="Minion3" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 531, 140 )
+transform/pos = Vector2( 598.59, 151.08 )
+
+[node name="Minion6 2" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1182.52, 146.648 )
 
 [node name="Minion4" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 793, 211 )
+transform/pos = Vector2( 739.814, 189.947 )
 
 [node name="Minion5" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 845, 162 )
+transform/pos = Vector2( 919.238, 197.457 )
 
 [node name="Boss" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1238, 145 )
+transform/pos = Vector2( 1549.36, 147.216 )
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
