@@ -49,42 +49,42 @@ centered = false
 [node name="Minion" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 298.432, 160.704 )
-ATTACK_DAMAGE = 2
+ATTACK_DAMAGE = 3
 
 [node name="Minion1" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 837.753, 144.593 )
-ATTACK_DAMAGE = 2
+ATTACK_DAMAGE = 3
 
 [node name="Minion2" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 467.302, 211.972 )
-ATTACK_DAMAGE = 2
+ATTACK_DAMAGE = 3
 
 [node name="Minion6" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1193.07, 207.54 )
-ATTACK_DAMAGE = 2
+ATTACK_DAMAGE = 3
 
 [node name="Minion3" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 598.59, 151.08 )
-ATTACK_DAMAGE = 2
+ATTACK_DAMAGE = 3
 
 [node name="Minion6 2" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1128.23, 146.648 )
-ATTACK_DAMAGE = 2
+ATTACK_DAMAGE = 3
 
 [node name="Minion4" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 739.814, 189.947 )
-ATTACK_DAMAGE = 2
+ATTACK_DAMAGE = 3
 
 [node name="Minion5" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 919.238, 197.457 )
-ATTACK_DAMAGE = 2
+ATTACK_DAMAGE = 3
 
 [node name="Boss" parent="." instance=ExtResource( 4 )]
 
