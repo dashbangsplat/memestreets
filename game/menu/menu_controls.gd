@@ -11,17 +11,18 @@ func _ready():
 	ANIM = self.get_parent()
 
 
-func _on_Credits_mouse_enter():
-	ANIM.play("HighlightCredits")
+func _on_Controls_mouse_enter():
+	ANIM.play("HighlightControls")
 
 
 
-func _on_Credits_mouse_exit():
-	ANIM.play_backwards("HighlightCredits")
+func _on_Controls_mouse_exit():
+	ANIM.play_backwards("HighlightControls")
 
 
 
-func _on_Credits_input_event( ev ):
+func _on_Controls_input_event( ev ):
 	if (ev.type == InputEvent.MOUSE_BUTTON):
 		if (ev.button_index == 1):
-			self.get_tree().change_scene("res://credits/credits.tscn")
+			self.get_tree().change_scene("res://controls/controls.tscn");
+

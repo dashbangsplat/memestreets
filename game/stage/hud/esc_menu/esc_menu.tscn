@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://stage/hud/esc_menu/esc_menu.gd" type="Script" id=1]
 [ext_resource path="res://stage/hud/esc_menu/esc_menu_panel.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/1943.fnt" type="BitmapFont" id=3]
 [ext_resource path="res://stage/hud/esc_menu/esc_menu_resume.gd" type="Script" id=4]
-[ext_resource path="res://stage/hud/esc_menu/esc_menu_quit.gd" type="Script" id=5]
+[ext_resource path="res://stage/hud/esc_menu/esc_menu_main_menu.gd" type="Script" id=5]
+[ext_resource path="res://stage/hud/esc_menu/esc_menu_quit.gd" type="Script" id=6]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 
 resource/name = "HighlightQuit"
 length = 0.2
@@ -23,14 +24,30 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource/name = "HighlightResume"
 length = 0.2
 loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Panel/Resume:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "HighlightMainMenu"
+length = 0.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel/MainMenu:custom_colors/font_color")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
@@ -87,6 +104,27 @@ script/script = ExtResource( 4 )
 animNodePath = NodePath("../../AnimateResume")
 escMenuNodePath = NodePath("../..")
 
+[node name="MainMenu" type="Label" parent="Panel"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 94.0
+margin/top = 100.0
+margin/right = 230.0
+margin/bottom = 116.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "main menu"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = ExtResource( 5 )
+animNodePath = NodePath("../../AnimateMainMenu")
+escMenuNodePath = NodePath("../..")
+
 [node name="Quit" type="Label" parent="Panel"]
 
 focus/ignore_mouse = false
@@ -94,9 +132,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 128.0
-margin/top = 100.0
+margin/top = 130.0
 margin/right = 192.0
-margin/bottom = 116.0
+margin/bottom = 146.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "quit"
@@ -104,7 +142,7 @@ uppercase = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = ExtResource( 5 )
+script/script = ExtResource( 6 )
 animNodePath = NodePath("../../AnimateQuit")
 escMenuNodePath = NodePath("../..")
 
@@ -113,7 +151,7 @@ escMenuNodePath = NodePath("../..")
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/HighlightQuit = SubResource( 2 )
+anims/HighlightQuit = SubResource( 1 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -124,23 +162,42 @@ autoplay = ""
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/HighlightResume = SubResource( 1 )
+anims/HighlightResume = SubResource( 2 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
-[connection signal="visibility_changed" from="." to="Panel/Quit" method="_on_EscMenu_visibility_changed"]
+[node name="AnimateMainMenu" type="AnimationPlayer" parent="."]
 
-[connection signal="visibility_changed" from="." to="Panel/Resume" method="_on_EscMenu_visibility_changed"]
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/HighlightMainMenu = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
 
 [connection signal="visibility_changed" from="." to="Panel" method="_on_EscMenu_visibility_changed"]
+
+[connection signal="visibility_changed" from="." to="Panel/Quit" method="_on_EscMenu_visibility_changed"]
+
+[connection signal="visibility_changed" from="." to="Panel/MainMenu" method="_on_EscMenu_visibility_changed"]
+
+[connection signal="visibility_changed" from="." to="Panel/Resume" method="_on_EscMenu_visibility_changed"]
 
 [connection signal="input_event" from="Panel/Resume" to="Panel/Resume" method="_on_Resume_input_event"]
 
 [connection signal="mouse_enter" from="Panel/Resume" to="Panel/Resume" method="_on_Resume_mouse_enter"]
 
 [connection signal="mouse_exit" from="Panel/Resume" to="Panel/Resume" method="_on_Resume_mouse_exit"]
+
+[connection signal="input_event" from="Panel/MainMenu" to="Panel/MainMenu" method="_on_MainMenu_input_event"]
+
+[connection signal="mouse_enter" from="Panel/MainMenu" to="Panel/MainMenu" method="_on_MainMenu_mouse_enter"]
+
+[connection signal="mouse_exit" from="Panel/MainMenu" to="Panel/MainMenu" method="_on_MainMenu_mouse_exit"]
 
 [connection signal="input_event" from="Panel/Quit" to="Panel/Quit" method="_on_Quit_input_event"]
 

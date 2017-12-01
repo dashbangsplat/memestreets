@@ -6,6 +6,8 @@ extends KinematicBody2D
 var STAGE
 var EFFECTS
 var PLAYER
+
+export var ACTIVE = false
 export var MAX_HEALTH = 200
 export var HEALTH = 100
 var RAYCAST_ATTACK
@@ -26,7 +28,8 @@ func _ready():
 	STAGE.connect(STAGE.SIGNAL_PLAYER_DIED, self, "handle_player_died")
 	
 	HEALTH = MAX_HEALTH
-	self.set_process(true)
+	self.speech_off()
+	self.set_process(ACTIVE)
 
 func _process(delta):
 	if(self.get_global_pos().distance_to(PLAYER.get_global_pos()) <= FIND_PLAYER_RADIUS):
@@ -50,9 +53,20 @@ func take_damage(amount):
 	HEALTH -= amount
 	if(HEALTH <= 0):
 		STAGE.emit_signal_enemy_died(KILL_SCORE)
+		self.get_tree().change_scene("res://you_win/you_win.tscn")
 		self.set_process(false)
 		self.hide()
 		self.queue_free()
 
 func handle_player_died():
 	self.set_process(false);
+
+func speech_on():
+	self.get_node("SpeechBubble").show()
+
+func speech_off():
+	self.get_node("SpeechBubble").hide()
+
+func set_active():
+	ACTIVE = true
+	self.set_process(ACTIVE)

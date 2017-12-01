@@ -17,6 +17,7 @@ transform/pos = Vector2( 160.475, 119.164 )
 
 [node name="Camera" type="Camera2D" parent="."]
 
+process/pause_mode = 2
 anchor_mode = 0
 rotating = false
 current = false

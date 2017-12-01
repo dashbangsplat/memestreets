@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://stage/level_1/level_1.gd" type="Script" id=1]
 [ext_resource path="res://assets/scenery/abandoned_city/background_city_seamless_320x240.png" type="Texture" id=2]
 [ext_resource path="res://stage/level_1/minion/minion.tscn" type="PackedScene" id=3]
 [ext_resource path="res://stage/level_1/boss/boss.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/audio/music/Level 1.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/audio/music/Boss.ogg" type="AudioStream" id=6]
+[ext_resource path="res://stage/level_1/boss_zone.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
 [node name="Level 1" type="Node2D"]
 
@@ -42,40 +49,48 @@ centered = false
 [node name="Minion" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 298.432, 160.704 )
+ATTACK_DAMAGE = 2
 
 [node name="Minion1" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 837.753, 144.593 )
+ATTACK_DAMAGE = 2
 
 [node name="Minion2" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 467.302, 211.972 )
+ATTACK_DAMAGE = 2
 
 [node name="Minion6" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1270.63, 195.352 )
+transform/pos = Vector2( 1193.07, 207.54 )
+ATTACK_DAMAGE = 2
 
 [node name="Minion3" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 598.59, 151.08 )
+ATTACK_DAMAGE = 2
 
 [node name="Minion6 2" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1182.52, 146.648 )
+transform/pos = Vector2( 1128.23, 146.648 )
+ATTACK_DAMAGE = 2
 
 [node name="Minion4" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 739.814, 189.947 )
+ATTACK_DAMAGE = 2
 
 [node name="Minion5" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 919.238, 197.457 )
+ATTACK_DAMAGE = 2
 
 [node name="Boss" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1549.36, 147.216 )
 
-[node name="StreamPlayer" type="StreamPlayer" parent="."]
+[node name="Level1Music" type="StreamPlayer" parent="."]
 
 stream/stream = ExtResource( 5 )
 stream/play = true
@@ -85,5 +100,45 @@ stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
+
+[node name="BossMusic" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 6 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Boss Zone" type="Area2D" parent="."]
+
+process/pause_mode = 2
+transform/pos = Vector2( 1350, 120.529 )
+transform/scale = Vector2( 0.294322, 3.80886 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 3.13203, 0, -0.148766 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 7 )
+LEVEL1MUSIC_PATH = NodePath("../Level1Music")
+BOSSMUSIC_PATH = NodePath("../BossMusic")
+BOSS_PATH = NodePath("../Boss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss Zone"]
+
+process/pause_mode = 2
+transform/pos = Vector2( 0, -0.148766 )
+transform/scale = Vector2( 1, 3.13203 )
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+[connection signal="body_enter" from="Boss Zone" to="Boss Zone" method="_on_Boss_Zone_body_enter"]
 
 

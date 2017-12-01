@@ -1,21 +1,56 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://stage/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/doge_standing.png" type="Texture" id=2]
-[ext_resource path="res://assets/audio/effects/sfx_damage_hit6.wav" type="Sample" id=3]
+[ext_resource path="res://assets/player/doge_passive_walk_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/player/doge_passive_walk_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/doge_attack.png" type="Texture" id=5]
+[ext_resource path="res://assets/player/doge_attack_walk_1.png" type="Texture" id=6]
+[ext_resource path="res://assets/player/doge_attack_walk_2.png" type="Texture" id=7]
+[ext_resource path="res://assets/audio/effects/sfx_damage_hit6.wav" type="Sample" id=8]
+[ext_resource path="res://assets/player/attack/much_kill.png" type="Texture" id=9]
+[ext_resource path="res://assets/player/attack/wow.png" type="Texture" id=10]
+[ext_resource path="res://assets/player/attack/could_win.png" type="Texture" id=11]
+[ext_resource path="res://assets/player/attack/eat_bad_guy.png" type="Texture" id=12]
+[ext_resource path="res://assets/player/attack/so_attack.png" type="Texture" id=13]
+[ext_resource path="res://assets/player/attack/such_violent.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="SampleLibrary" id=2]
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "walking_passive",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "standing_passive",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "walking_attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "standing_attack",
+"speed": 5.0
+} ]
+
+[sub_resource type="SampleLibrary" id=3]
 
 samples/sfx_damage_hit6 = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 3 )
+"sample": ExtResource( 8 )
 }
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -36,9 +71,11 @@ MAX_HEALTH = 100
 HEALTH = 100
 SCORE = 0
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 
-texture = ExtResource( 2 )
+frames = SubResource( 2 )
+animation = "standing_passive"
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
@@ -59,7 +96,7 @@ type_mask = 15
 [node name="SamplePlayer" type="SamplePlayer" parent="."]
 
 config/polyphony = 1
-config/samples = SubResource( 2 )
+config/samples = SubResource( 3 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
@@ -72,5 +109,185 @@ default/filter/gain = 1.0
 default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
+
+[node name="MuchKill" type="Particles2D" parent="."]
+
+config/amount = 1
+config/lifetime = 2.0
+config/emit_timeout = 3.0
+config/emitting = false
+config/process_mode = 1
+config/local_space = false
+config/texture = ExtResource( 9 )
+params/direction = 0.0
+params/spread = 20.0
+params/linear_velocity = 15.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.0
+params/final_size = 0.7
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+randomness/spread = 1.0
+randomness/initial_size = 0.1
+randomness/final_size = 1.0
+
+[node name="Wow" type="Particles2D" parent="."]
+
+config/amount = 1
+config/lifetime = 2.0
+config/emit_timeout = 3.0
+config/emitting = false
+config/process_mode = 1
+config/local_space = false
+config/texture = ExtResource( 10 )
+params/direction = 0.0
+params/spread = 20.0
+params/linear_velocity = 15.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.0
+params/final_size = 0.7
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+randomness/spread = 1.0
+randomness/initial_size = 0.1
+randomness/final_size = 1.0
+
+[node name="CouldWin" type="Particles2D" parent="."]
+
+config/amount = 1
+config/lifetime = 2.0
+config/emit_timeout = 3.0
+config/emitting = false
+config/process_mode = 1
+config/local_space = false
+config/texture = ExtResource( 11 )
+params/direction = 0.0
+params/spread = 20.0
+params/linear_velocity = 15.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.0
+params/final_size = 0.7
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+randomness/spread = 1.0
+randomness/initial_size = 0.1
+randomness/final_size = 1.0
+
+[node name="EatBadGuy" type="Particles2D" parent="."]
+
+config/amount = 1
+config/lifetime = 2.0
+config/emit_timeout = 3.0
+config/emitting = false
+config/process_mode = 1
+config/local_space = false
+config/texture = ExtResource( 12 )
+params/direction = 0.0
+params/spread = 20.0
+params/linear_velocity = 15.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.0
+params/final_size = 0.7
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+randomness/spread = 1.0
+randomness/initial_size = 0.1
+randomness/final_size = 1.0
+
+[node name="SoAttack" type="Particles2D" parent="."]
+
+config/amount = 1
+config/lifetime = 2.0
+config/emit_timeout = 3.0
+config/emitting = false
+config/process_mode = 1
+config/local_space = false
+config/texture = ExtResource( 13 )
+params/direction = 0.0
+params/spread = 20.0
+params/linear_velocity = 15.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.0
+params/final_size = 0.7
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+randomness/spread = 1.0
+randomness/initial_size = 0.1
+randomness/final_size = 1.0
+
+[node name="SuchViolent" type="Particles2D" parent="."]
+
+config/amount = 1
+config/lifetime = 2.0
+config/emit_timeout = 3.0
+config/emitting = false
+config/process_mode = 1
+config/local_space = false
+config/texture = ExtResource( 14 )
+params/direction = 0.0
+params/spread = 20.0
+params/linear_velocity = 15.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.0
+params/final_size = 0.7
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+randomness/spread = 1.0
+randomness/initial_size = 0.1
+randomness/final_size = 1.0
 
 

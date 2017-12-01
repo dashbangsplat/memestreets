@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://stage/level_1/boss/boss.gd" type="Script" id=1]
 [ext_resource path="res://assets/boss/all_the_things_with.png" type="Texture" id=2]
 [ext_resource path="res://assets/audio/effects/sfx_damage_hit10.wav" type="Sample" id=3]
+[ext_resource path="res://assets/boss/kill_all_the_things_bubble.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -20,8 +21,8 @@ samples/sfx_damage_hit10 = {
 }
 
 [node name="Boss" type="KinematicBody2D" groups=[
-"boss",
 "enemy",
+"boss",
 ]]
 
 input/pickable = false
@@ -32,6 +33,7 @@ collision/layers = 2
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
+ACTIVE = false
 MAX_HEALTH = 200
 HEALTH = 100
 ATTACK_DAMAGE = 10
@@ -76,5 +78,11 @@ default/filter/gain = 1.0
 default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
+
+[node name="SpeechBubble" type="Sprite" parent="."]
+
+transform/pos = Vector2( -47.0762, -60.5071 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
 
 

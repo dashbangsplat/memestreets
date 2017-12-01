@@ -6,10 +6,11 @@ extends KinematicBody2D
 var STAGE
 var PLAYER
 var EFFECTS
+export var ACTIVE = true
 export var MAX_HEALTH = 100
 export var HEALTH = 100
 var RAYCAST_ATTACK
-export var ATTACK_DAMAGE = 5
+export var ATTACK_DAMAGE = 2
 export var ATTACK_DELAY = 1
 var ATTACK_TIMER = ATTACK_DELAY
 export var KILL_SCORE = 50
@@ -26,7 +27,7 @@ func _ready():
 	STAGE.connect(STAGE.SIGNAL_PLAYER_DIED, self, "handle_player_died")
 	
 	HEALTH = MAX_HEALTH
-	self.set_process(true)
+	self.set_process(ACTIVE)
 
 func _process(delta):
 	if(self.get_global_pos().distance_to(PLAYER.get_global_pos()) <= FIND_PLAYER_RADIUS):
