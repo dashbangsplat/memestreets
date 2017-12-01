@@ -10,7 +10,7 @@ export var ACTIVE = true
 export var MAX_HEALTH = 100
 export var HEALTH = 100
 var RAYCAST_ATTACK
-export var ATTACK_DAMAGE = 2
+export var ATTACK_DAMAGE = 3
 export var ATTACK_DELAY = 1
 var ATTACK_TIMER = ATTACK_DELAY
 export var KILL_SCORE = 50
