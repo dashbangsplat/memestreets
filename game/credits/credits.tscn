@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://credits/Credits.gd" type="Script" id=1]
+[ext_resource path="res://credits/credits.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/main_menu.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/1943.fnt" type="BitmapFont" id=3]
 [ext_resource path="res://assets/audio/music/Credits.ogg" type="AudioStream" id=4]
@@ -24,6 +24,7 @@ tracks/0/keys = {
 
 [node name="Control" type="Container"]
 
+process/pause_mode = 2
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2

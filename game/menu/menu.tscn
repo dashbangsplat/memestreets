@@ -76,6 +76,7 @@ tracks/0/keys = {
 
 [node name="Control" type="Control"]
 
+process/pause_mode = 2
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
